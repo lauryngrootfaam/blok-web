@@ -1,10 +1,43 @@
+/*fonts importeren*/
+@font-face {
+    font-family: press-start;
+    src: url(fonts/PressStart2P-Regular.ttf);
+}
+
+/*font*/
+h1 {
+    margin-left: 20px;
+    color: white;
+}
+
+h1,
+h2,
+h6 {
+    font-family: "press-start", sans-serif;
+
+}
+
+h6 {
+    color: white;
+    text-align: left;
+    margin-left: 20px;
+}
+
+/*body*/
 body {
-    background-color: #27db63;
+    background-color: #0026cc;
     margin: 0px;
 }
 
+/*navigatie*/
+
+/* deze code is nodig als ik te veel navigatie items heb en ik wil scrollen binnen mijn navigatie*/
+header {
+    overflow-x: scroll;
+}
+
 ul {
-    background-color: #3627db;
+    background-color: #0026cc;
     list-style: none;
     margin: 0;
     padding: 1rem;
@@ -13,16 +46,18 @@ ul {
     align-items: center;
 }
 
-li {
-    background-color: white;
-    border: double black 10px;
-}
-
 a {
     padding: 10px;
     text-decoration: none;
+    color: white;
+    font-family: "press-start", sans-serif;
+    font-size: 1em;
+}
+
+a:hover {
     color: black;
 }
+
 
 #logo img {
     height: 90px;
@@ -31,80 +66,274 @@ a {
 
 #logo {
     border: none;
+    background-color: #0026cc;
 }
 
-.container {
+/*videobanner*/
+.video {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+
+}
+
+video {
+    object-fit: cover;
+    position: sticky;
+    left: 0;
+    top: 40;
+    width: 100%;
+    height: 50vh;
+}
+
+/*filteren*/
+form {
+    color: white;
+    padding: 30px;
+    font-family: "press-start", sans-serif;
+    font-size: 1em;
+}
+
+form input {
+    width: 20px;
+    height: 20px;
+}
+
+#resetbutton {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 1em;
+    width: 15em;
+    font-family: "press-start";
+    font-size: 0.8em;
+}
+
+/*content*/
+
+#content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
     grid-gap: 40px 80px;
+    padding: 2vw;
     text-align: center;
-/*
-    background-color: white;
-    border: dotted 2px black;
-*/
-            margin: 100px 20px 100px 20px;
+    margin: 50px 20px 10px 20px;
+    background-image: url(img/background-11.png);
+    /*    achtergrondafbeelding gevonden van de lowlandsite bij inspecteren*/
 }
 
-#artikel1 {
-    background-color: cyan;
-    border: solid 10px black;
+@media (min-width: 700px) {
+
+    #content,
+    footer section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header {
+        overflow-x: hidden;
+    }
+
 }
 
-#artikel2 {
-    background-color: orange;
-    border: solid 10px black;
+@media (min-width: 1000px) {
+
+    #content,
+    footer section {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    header {
+        overflow-x: hidden;
+    }
 }
 
-#artikel3 {
+.artikel {
+    background-color: #4cd066;
+    /*    background-image: none;*/
+    border: solid 1px black;
+    box-shadow: inset 0 0 13px 10px rgba(0, 0, 0, 0.85);
+    font-family: "press-start", sans-serif;
+    font-size: 1em;
+    /*    van de lowlandsite bij inspecteren*/
+
+}
+
+.artikel:hover {
+    transform: scale(0.8);
+    border: solid 1px blue;
+}
+
+/*hartbutton*/
+.hart {
+    display: flex;
+    justify-content: flex-start;
     background-color: red;
-    border: solid 10px black;
+    margin: 10px;
+    border-radius: 20px;
 }
 
-#artikel4 {
-    background-color: cyan;
-    border: solid 10px black;
+
+/*background content*/
+.background {
+    background-image: url(img/background-7.png);
+    box-shadow: inset 0 0 13px 5px rgba(0, 0, 0, 0.3);
 }
 
-#artikel5 {
-    background-color: orange;
-    border: solid 10px black;
-}
-
-#artikel6 {
-    background-color: red;
-    border: solid 10px black;
-}
-
-#artikel1:hover,
-#artikel2:hover,
-#artikel3:hover,
-#artikel4:hover,
-#artikel5:hover,
-#artikel6:hover {
-    background-color: aliceblue;
-    border: solid 10px blue;
-}
-
-#artikel1 img,
-#artikel2 img,
-#artikel3 img,
-#artikel4 img,
-#artikel5 img,
-#artikel6 img {
+.artikel img {
     width: 277px;
     height: 185px;
+    padding-bottom: 3em;
 }
 
-/*     grid-template-columns: 40px 50px auto 50px ;*/
-/*    grid-template-rows: repeat (3, 1fr)*/
 
-/*
-.image1 {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: row1-start;
-    grid-row-end: 3;
+/*filtermenu*/
+.filtermenu {
+    background-color: #4cd066;
+    color: white;
+    cursor: pointer;
+    padding: 1em;
+    width: 15em;
+    border: none;
+    font-family: "press-start", sans-serif;
+    font-size: 1em;
 }
-*/
 
+.active,
+filtermenu:hover {
+    color: #0026cc;
+}
+
+.categorie {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #4cd066;
+    box-shadow: inset 0 0 13px 5px rgba(0, 0, 0, 0.3);
+}
+
+#filteren {
+    background-color: #4cd066;
+}
+
+
+/*footer*/
+/*code van W3schools gebruikt*/
+footer form {
+    border: 3px solid #f1f1f1;
+    font-family: Arial;
+}
+
+
+/*code van W3schools gebruikt*/
+input[type=text],
+input[type=submit] {
+    width: 20em;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=text]:hover,
+input[type=submit]:hover {
+    background-color: lightgray;
+        }
+
+/*attribuut ::placeholder heb ik van de site https://www.w3schools.com/howto/howto_css_placeholder.asp*/
+::placeholder  {
+    font-family: "press-start", sans-serif;
+}
+
+
+footer section {
+    background-color: white;
+}
+
+footer img {
+    width: 100px;
+    margin: auto;
+}
+
+/*button om email te verzenden*/
+.buttonmail {
+    background-color: #4cd066;
+    font-family: "press-start", sans-serif;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/*//////////////////////////////DETAILPAGINA\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+/*content detailpagina (Sectie)*/
+
+#content2 {
+    display: flex;
+    justify-content: center;
+    padding: 2vw;
+    text-align: center;
+    margin: 50px 20px 10px 20px;
+    background-image: url(img/background-11.png);
+}
+
+/*content detailpagina (artikel)*/
+#artikel {
+    width: 700px;
+    height: auto;
+    background-color: #4cd066;
+    border: solid 1px black;
+    box-shadow: inset 0 0 13px 10px rgba(0, 0, 0, 0.85);
+    font-family: sans-serif;
+    font-size: 1em;
+
+}
+
+#artikel p {
+    padding: 40px;
+    text-align: left;
+}
+
+#artikel img {
+    width: 415px;
+    height: 277px;
+}
+
+/*YouTube video*/
+
+iframe {
+    width: 560px;
+    height: 315px;
+    padding: 50px 0px 100px 0px;
+}
+
+
+/*formulier*/
+/*verzendbutton*/
+#verzendbutton {
+    display: block;
+    font-family: "press-start", sans-serif;
+    padding: 1px;
+    width: 10em;
+    height: 3em;
+    border-radius: 6px;
+    color: white;
+    background-color: #4cd066;
+}
+
+
+#formulier,
+#formulier label {
+    display: block;
+   }
+
+/*formulierveld*/
+#subject {
+    width: 260px;
+    margin-top: 10px;
+}
+
+#subject:hover{
+    background-color: lightgray;
+}
