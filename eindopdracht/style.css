@@ -12,9 +12,25 @@ h1 {
 
 h1,
 h2,
+h3,
 h6 {
     font-family: "press-start", sans-serif;
+}
 
+h2,
+h3 {
+    color: white;
+}
+
+h4 {
+    font-family: "press-start", sans-serif;
+    color: white;
+    margin-left: 10px;
+}
+
+footer h4 {
+    padding-top: 10px;
+    color: black;
 }
 
 h6 {
@@ -46,6 +62,22 @@ ul {
     align-items: center;
 }
 
+li {
+    padding: 1em;
+}
+
+li:hover {
+    transform: scale(1.05);
+    box-shadow: inset 0 0 6px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#logo:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
 a {
     padding: 10px;
     text-decoration: none;
@@ -56,6 +88,10 @@ a {
 
 a:hover {
     color: black;
+}
+
+a:active {
+    color: #4cd066;
 }
 
 
@@ -70,44 +106,36 @@ a:hover {
 }
 
 /*videobanner*/
-.video {
+
+video {
     position: relative;
     width: 100%;
     height: 50vh;
-
-}
-
-video {
     object-fit: cover;
     position: sticky;
     left: 0;
     top: 40;
-    width: 100%;
-    height: 50vh;
 }
 
-/*filteren*/
-form {
+
+/*
+filterformulier
+#filteren form,
+#filteren label {
+    display: inline-block;
+    border: none;
     color: white;
-    padding: 30px;
+    padding: 20px;
     font-family: "press-start", sans-serif;
     font-size: 1em;
 }
 
-form input {
-    width: 20px;
-    height: 20px;
+#filteren {
+    background-color: #4cd066;
 }
+*/
 
-#resetbutton {
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    padding: 1em;
-    width: 15em;
-    font-family: "press-start";
-    font-size: 0.8em;
-}
+
 
 /*content*/
 
@@ -148,7 +176,7 @@ form input {
     }
 }
 
-.artikel {
+article {
     background-color: #4cd066;
     /*    background-image: none;*/
     border: solid 1px black;
@@ -159,28 +187,96 @@ form input {
 
 }
 
-.artikel:hover {
+article:hover {
     transform: scale(0.8);
     border: solid 1px blue;
 }
 
 /*hartbutton*/
-.hart {
-    display: flex;
-    justify-content: flex-start;
-    background-color: red;
-    margin: 10px;
-    border-radius: 20px;
+/* bron code: https://foundation.zurb.com/building-blocks/blocks/button-like.html*/
+.button-like {
+    border: 2px solid #8a8a8a;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    text-align: center;
+    display: block;
+    border-radius: 3rem;
+    color: #8a8a8a;
+    transition: all ease 0.4s;
+}
+
+.button-like span {
+    margin-left: 0.5rem;
+}
+
+.button-like .fa,
+.button-like span {
+    transition: all ease 0.4s;
+}
+
+.button-like:focus {
+    background-color: transparent;
+}
+
+.button-like:focus .fa,
+.button-like:focus span {
+    color: #8a8a8a;
+}
+
+.button-like:hover {
+    border-color: #cc4b37;
+    background-color: transparent;
+}
+
+.button-like:hover .fa,
+.button-like:hover span {
+    color: #cc4b37;
+}
+
+.liked {
+    background-color: #cc4b37;
+    border-color: #cc4b37;
+}
+
+.liked .fa,
+.liked span {
+    color: #fefefe;
+}
+
+.liked:focus {
+    background-color: #cc4b37;
+}
+
+.liked:focus .fa,
+.liked:focus span {
+    color: #fefefe;
+}
+
+.liked:hover {
+    background-color: #cc4b37;
+    border-color: #cc4b37;
+}
+
+.liked:hover .fa,
+.liked:hover span {
+    color: #fefefe;
 }
 
 
+
+
+
+
 /*background content*/
-.background {
+div {
     background-image: url(img/background-7.png);
     box-shadow: inset 0 0 13px 5px rgba(0, 0, 0, 0.3);
 }
 
-.artikel img {
+article img {
     width: 277px;
     height: 185px;
     padding-bottom: 3em;
@@ -188,6 +284,7 @@ form input {
 
 
 /*filtermenu*/
+/*
 .filtermenu {
     background-color: #4cd066;
     color: white;
@@ -198,72 +295,144 @@ form input {
     font-family: "press-start", sans-serif;
     font-size: 1em;
 }
+*/
 
+
+
+/*
 .active,
 filtermenu:hover {
     color: #0026cc;
 }
+*/
 
-.categorie {
+/*
+#filteren section {
     padding: 0 18px;
     display: none;
     overflow: hidden;
     background-color: #4cd066;
     box-shadow: inset 0 0 13px 5px rgba(0, 0, 0, 0.3);
 }
+*/
 
-#filteren {
-    background-color: #4cd066;
+
+/*footerformulier en emailformulier*/
+form {
+
+    display: block;
+    color: white;
+    padding: 30px;
+    font-family: "press-start", sans-serif;
+    font-size: 1em;
+    border: solid 4px white;
 }
 
-
-/*footer*/
-/*code van W3schools gebruikt*/
-footer form {
-    border: 3px solid #f1f1f1;
-    font-family: Arial;
+label {
+    display: block;
 }
-
 
 /*code van W3schools gebruikt*/
 input[type=text],
-input[type=submit] {
+input[type=submit],
+input[type=email] {
     width: 20em;
+    height: 1em;
     padding: 12px;
-    margin: 8px 0;
-    display: inline-block;
+    margin: 8px 4px 20px 0px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: 1em;
+
 }
 
-input[type=text]:hover,
+/*button om email te verzenden*/
+input[type=submit] {
+    font-size: 0.8em;
+    font-family: "press-start", sans-serif;
+    padding: 1px;
+    width: 10em;
+    height: 2.3em;
+    border-radius: 6px;
+    color: white;
+    background-color: #4cd066;
+    margin-left: 15px;
+
+
+}
+
 input[type=submit]:hover {
+    background-color: #92cc92;
+}
+
+input[type=submit]:active {
+    color: #0026cc;
+}
+
+input[type=submit]:focus {
+    box-shadow: inset 0 0 10px 1px rgba(1, 4, 4, 0.85);
+}
+
+
+input[type=text]:hover,
+input[type=email]:hover {
     background-color: lightgray;
-        }
+}
+
+
+
+.hidden {
+    display: none;
+}
 
 /*attribuut ::placeholder heb ik van de site https://www.w3schools.com/howto/howto_css_placeholder.asp*/
-::placeholder  {
+::placeholder {
     font-family: "press-start", sans-serif;
 }
 
+/*formulier*/
+fieldset {
+    border: none;
+}
 
+legend {
+    margin: 25px 0px 25px;
+    color: #4cd066;
+    text-decoration: underline;
+}
+
+select {
+    font-family: "press-start", sans-serif;
+    color: #4cd066;
+    background-color: white;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 6px;
+
+
+}
+
+textarea {
+    width: 314px;
+    margin-top: 10px;
+}
+
+textarea:hover {
+    background-color: lightgray;
+}
+
+
+
+/*footer*/
 footer section {
     background-color: white;
 }
+
 
 footer img {
     width: 100px;
     margin: auto;
 }
-
-/*button om email te verzenden*/
-.buttonmail {
-    background-color: #4cd066;
-    font-family: "press-start", sans-serif;
-    padding: 5px;
-    border-radius: 5px;
-}
-
 
 /*//////////////////////////////DETAILPAGINA\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 
@@ -279,7 +448,7 @@ footer img {
 }
 
 /*content detailpagina (artikel)*/
-#artikel {
+#content2 article {
     width: 700px;
     height: auto;
     background-color: #4cd066;
@@ -290,12 +459,17 @@ footer img {
 
 }
 
-#artikel p {
+#content2 article:hover {
+    transform: none;
+    border: solid 1px blue;
+}
+
+#content2 p {
     padding: 40px;
     text-align: left;
 }
 
-#artikel img {
+#content2 img {
     width: 415px;
     height: 277px;
 }
@@ -305,35 +479,259 @@ footer img {
 iframe {
     width: 560px;
     height: 315px;
-    padding: 50px 0px 100px 0px;
+    padding: 50px 0px 50px 0px;
+}
+
+.footerlink {
+    display: block;
+    font-size: 0.5em;
+    margin-left: 5px;
 }
 
 
-/*formulier*/
-/*verzendbutton*/
-#verzendbutton {
-    display: block;
-    font-family: "press-start", sans-serif;
-    padding: 1px;
-    width: 10em;
-    height: 3em;
-    border-radius: 6px;
-    color: white;
+/*filtermenu 2.0, met hulp van Sonja's codepen, de stof van de les */
+button {
+    margin-left: 20px;
     background-color: #4cd066;
+    color: white;
+    cursor: pointer;
+    padding: 1em;
+    border: none;
+    font-family: "press-start", sans-serif;
+    font-size: 1em;
+    /*    width: 100%;*/
+    text-align: left;
+    outline: none;
+    border-radius: 0px;
+}
+
+#filtermenu form,
+#filtermenu label {
+    display: inline;
+
+}
+
+form#filtermenu {
+    margin-left: 20px;
+    background-color: #4cd066;
+    position: absolute;
+    overflow: hidden;
+    margin-top: 0px;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    transition: opacity .1s,
+        width .3s .4s,
+        height .3s .4s;
+
+}
+
+form#filtermenu.verschijnen {
+    background-image: none;
+    background-color: #4cd066;
+    margin-left: 20px;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    opacity: 1;
+    height: 75px;
 }
 
 
-#formulier,
-#formulier label {
+/*//////////////////////////////Lau's festival pagina\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+/*Op deze pagina experimenteer ik met css*/
+
+#lau {
+    background-color: #161616;
+}
+
+/*inspiratie van https://codepen.io/codeams/pen/Ksbcz*/
+#lau h1 {
+    color: white;
+
+    text-transform: uppercase;
     display: block;
-   }
-
-/*formulierveld*/
-#subject {
-    width: 260px;
-    margin-top: 10px;
+    font-family: sans-serif;
+    text-align: center;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 2em;
+    /*    font-weight: 700;*/
+    letter-spacing: 8px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    animation: text 3s 1;
 }
 
-#subject:hover{
-    background-color: lightgray;
+
+
+@keyframes text {
+
+
+    30% {
+        letter-spacing: 25px;
+
+
+    }
+
+    85% {
+        letter-spacing: 8px;
+
+
+    }
+}
+
+#lau video {
+    display: block;
+    width: 40em;
+    height: 20em;
+    padding: 50px 0px 50px 0px;
+    margin: 0px auto;
+}
+
+/*https://codepen.io/sazzad/pen/yNNNJG, https://www.w3schools.com/howto/howto_css_animate_buttons.asp*/
+
+#lau button {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    color: yellow;
+    background-color: black;
+    height: 60px;
+    width: 200px;
+    border: solid black 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 3px yellow;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+#lau button:hover {
+    color: black;
+    background-color: transparent;
+}
+
+#lau button:hover:before {
+    top: 0%;
+    bottom: auto;
+    height: 100%;
+}
+
+#lau button:before {
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    content: '';
+    color: black;
+    background-color: yellow;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+
+/*
+2e button
+https://webdeasy.de/en/top-css-buttons-en/
+*/
+
+#lau #button2 {
+    display: block;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+#button2:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(10px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+#button2:active {
+    color: #000
+}
+
+#button2:active:after {
+    background: transparent;
+}
+
+#button2:hover:before {
+    opacity: 1;
+}
+
+#button2:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/*Met font spelen*/
+/*Deel code die ik uit de les heb, https://www.w3schools.com/cssref/css3_pr_text-shadow.asp, https://html-css-js.com/css/generator/text-shadow/, https://css-tricks.com/snippets/css/gradient-text/*/
+
+#lau h2 {
+    text-shadow: 5px 1px #0026cc;
+    text-align: center;
+
+
+}
+
+#lau h3 {
+    color: #FFFFFF;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+    text-align: center;
+    
+}
+
+#fontstyle {
+    color: red;
+text-shadow: 2px 2px 0 orange, 4px 4px 0 grey;
+}
+
+#lau h4 {
+    font-family: sans-serif;
+    text-align: center;
+  background: -webkit-linear-gradient(green, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
